@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import random
+n = int(input('幾つの乱数?'))
+s = []
+for i in range (0,n):
+    a = random.randint(1,100)
+    s.append(a)
+print(s)
+pivot = n-1
+for j in range (0, pivot-1):
+    if s[j] > s[pivot]:
+        for k in reversed (range(j, pivot-1)):
+            if s[k] < s[pivot]:
+                b = s[j]
+                s[j] = s[k]
+                s[k] = b
+            elif j == k:
+                c = s[j]
+                s[j] = s[pivot]
+                s[pivot] = c
+                pivot = j
+            else:
+                pass
+    else:
+        pass
+print(s)
+print(s[pivot])
