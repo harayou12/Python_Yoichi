@@ -7,24 +7,30 @@ import numpy as np
 n = input()
 num = []
 crs = []
-#num = [[0] * 2] * (int(n))
-#crs = [[0] * 2] * (3)
-com = [[0] * 3] * (int(n))
+com = []
+[[0] * 3] * (int(n))
 for i in range(int(n)):
     num.append([random.random(),random.random()])
-    x = num[i][0]
-    y = num[i][1]
-    plt.plot(x, y, "o", color = "red")
+#    x = num[i][0]
+#    y = num[i][1]
+#    plt.plot(x, y, "o", color = "red")
 for j in range(3):
     crs.append([random.random(), random.random()])
-    x = crs[j][0]
-    y = crs[j][1]
-    plt.plot(x, y, "ro", color = "blue")
+#    x = crs[j][0]
+#    y = crs[j][1]
+#    plt.plot(x, y, "ro", color = "blue")
 print(num)
 print(crs)
+a = []
+b = []
 for k in range(int(n)):
     for l in range(3):
-        com[k][l] = math.sqrt((num[k][0]-crs[l][0])**2 + (num[k][1]-crs[l][1])**2)
-    print(com[k].index(min(com[k])))
+        com.append(math.sqrt((num[k][0]-crs[l][0])**2+(num[k][1]-crs[l][1])**2))
+    mina = com.index(min(com[3*k:3*k+2])) % 3
+    maxb = com.index(max(com[3*k:3*k+2])) % 3
+    a.append([num[mina][0],num[mina][1]])
+    b.append([num[maxb][0],num[maxb][1]])
 print(com)
+print(a)
+print(b)
 plt.show()
