@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+input_first=input()
+first = []
+for ki in range(2):
+    first = input_first.rstrip().split(' ')
+n = first[0]
+m = first[1]
+a = []
+for pi in range(int(n)):
+    input_second = input()
+    p = input_second.rstrip().split(' ')
+    a.append(p)
+print(a)
+
